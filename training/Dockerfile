@@ -20,6 +20,9 @@ WORKDIR ${JUPYTER_NB_DIR}
 ADD packages.txt .
 RUN apt-get update -y -qq && xargs -ra packages.txt apt-get install -y -qq
 
+# Install libgomp1 to run lightgbm
+RUN apt-get update -y && apt-get install -y libgomp1
+
 # Install JupyterLab
 RUN pip install jupyterlab
 
