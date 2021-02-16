@@ -6,4 +6,5 @@ nltk==3.5
 cloudpickle==1.6.0
 matplotlib==3.3.4
 scikit-plot==0.3.7
+pytest==6.2.2
 
