@@ -13,11 +13,11 @@ MODEL_PATH = os.getenv("MODEL_PATH")
 with open(MODEL_PATH, 'rb') as f:
     model = pickle.load(f)
 
-
 def pre_process(df):
     df['title'] = df['title'].str.lower()
-    return df.fillna("")
-
+    string_columns = df.select_dtypes("object").columns.tolist()
+    df.loc[:, string_columns] = df.loc[:, string_columns].fillna("")
+    return df
 
 @app.route('/v1/categorize', methods=["POST"])
 def categorize():
