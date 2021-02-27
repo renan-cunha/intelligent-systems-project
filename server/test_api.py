@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from scipy.sparse import csr_matrix
 from sklearn.metrics import roc_auc_score
+import os
 
 def load_model():
     with open(os.getenv("MODEL_PATH"), "rb") as file:
@@ -38,7 +39,7 @@ def test_preprocessor_pipeline_output_class():
     data = load_data()
     model = load_model()
 
-    expected = csr_matrix((0, 0), dtype=np.float64).__class__
+    expected = csr_matrix
     assert expected == model["preprocessor"].transform(data).__class__
 
 def test_pipeline_predict():
