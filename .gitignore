@@ -142,7 +142,10 @@ dmypy.json
 # profiling data
 .prof
 
-# vscode data
+# vscode
 .vscode
+
+# pkl files
+*.pkl
 
 # End of https://www.toptal.com/developers/gitignore/api/python
