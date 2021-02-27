@@ -143,7 +143,6 @@ dmypy.json
 .prof
 
 # pkl files
-*.pkl
 =======
 # vscode data
 .vscode
